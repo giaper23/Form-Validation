@@ -230,14 +230,14 @@ address.addEventListener("blur", valAddress); // Needs regex !!!
 
 submitButton.addEventListener("click", function(e){
 
-    if (valName() == false || valSurname() == false || valEmail() == false || valEmailConf() == false || valTel() == false || valAddress() == false) {
+    if (valName() != true || valSurname() != true || valEmail() != true || valEmailConf() != true || valTel() != true || valAddress() != true) {
 
         e.preventDefault(); // If any of the above is true then stop the submit action
 
     }
     
-
 });
+
 
 
 
