@@ -3,3 +3,28 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+p {
+
+    text-align: center;
+    display: inline-block;
+
+}
+
+.images {
+
+    display: inline-block;
+
+}
+
+.error {
+
+    border-color: red;
+
+}
+
+.ok {
+
+    border-color: lightskyblue;
+
+}

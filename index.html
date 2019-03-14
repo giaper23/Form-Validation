@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Form Validation</title>
 </head>
 <body>
-    <form>
-        Name:<input type="text" name="name" id="name"> <br> <br>
-        Surname:<input type="text" name="surname" id="surname"> <br> <br>
-        E-mail:<input type="email" name="email" id="email"> <br> <br>
-        E-mail confirmation:<input type="email" name="email_conf" id="email_conf"> <br> <br>
-        Phone:<input type="tel" name="tel" id="tel"> <br> <br>
-        Address:<input type="text" name="address" id="address"> <br> <br>
-    </form>
+    <section>
+        <form>
+            <p> Name:<input type="text" name="name" id="name"> <div class="images"> </div> </p> <br> <br>
+            <p> Surname:<input type="text" name="surname" id="surname"> <div class="images"> </div> </p> <br>
+            <p> E-mail:<input type="email" name="email" id="email"> <div class="images"> </div> </p> <br>
+            <p> Confirm e-mail:<input type="email" name="email_conf" id="email_conf"> <div class="images"> </div> </p> <br>
+            <p> Phone:<input type="tel" name="tel" id="tel"> <div class="images"> </div> </p> <br>
+            <p> Address:<input type="text" name="address" id="address"> <div class="images"> </div> </p> <br>
+            <p><input type="submit" value="Submit" id="submitButton"></p>
+        </form>
+    </section>
 </body>
 </html>
