@@ -1,3 +1,5 @@
+"use strict"
+
 const name = document.getElementById("name"); //Name field
 const surname = document.querySelector("#surname"); //Surname field
 const email = document.querySelector("#email"); //Email field
@@ -5,6 +7,7 @@ const email_conf = document.querySelector("#email_conf"); //Email_conf field
 const tel = document.querySelector("#tel"); // Tel field
 const address = document.querySelector("#address"); // Address field
 const images = document.querySelectorAll(".images"); // Divs with class images to add icon
+const submitButton = document.querySelector("#submitButton"); // The submit button
 let regexname = /^[a-z | ά-ώ ,.'-]+$/i; // Regular expression for name validation (Mporw na valw osous tonous thelw!)
 let regexemail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -17,7 +20,7 @@ function valName() {
         name.classList.remove("ok");
         name.classList.add("error");
         images[0].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </p>"; // A red cross when it's not ok
-
+        return false;
     }
 
     else if (!regexname.test(name.value)) {
@@ -25,7 +28,7 @@ function valName() {
         name.classList.remove("ok");
         name.classList.add("error");
         images[0].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted name! </p>"; // A red cross when it's not ok
-
+        return false;
     }
 
     else {
@@ -33,6 +36,7 @@ function valName() {
         name.classList.remove("error");
         name.classList.add("ok");
         images[0].innerHTML = "<img src='/images/tick.png' alt='Ok'>";
+        return true;
 
     }
 
@@ -45,7 +49,7 @@ function valSurname() {
         surname.classList.remove("ok");
         surname.classList.add("error");
         images[1].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </p>"; // A red cross when it's not ok
-
+        return false;
     }
 
     else if (!regexname.test(surname.value)) {
@@ -53,7 +57,7 @@ function valSurname() {
         surname.classList.remove("ok");
         surname.classList.add("error");
         images[1].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted surname! </p>"; // A red cross when it's not ok
-
+        return false;
     }
 
     else {
@@ -61,7 +65,8 @@ function valSurname() {
 
         surname.classList.remove("error");
         surname.classList.add("ok");
-        images[1].innerHTML = "<img src='/images/tick.png' alt='Ok'>"; 
+        images[1].innerHTML = "<img src='/images/tick.png' alt='Ok'>";
+        return true;
 
     }
 
@@ -76,6 +81,7 @@ function valEmail() {
         email.classList.remove("ok");
         email.classList.add("error");
         images[2].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </p>"; // A red cross when it's not ok
+        return false;
 
     }
 
@@ -84,6 +90,7 @@ function valEmail() {
         email.classList.remove("ok");
         email.classList.add("error");
         images[2].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted e-mail! </p>"; // A red cross when it's not ok
+        return false;
 
     }
 
@@ -93,6 +100,7 @@ function valEmail() {
         email.classList.remove("error");
         email.classList.add("ok");
         images[2].innerHTML = "<img src='/images/tick.png' alt='Ok'>"; 
+        return true;
 
     }
 
@@ -105,6 +113,7 @@ function valEmailConf() {
         email_conf.classList.remove("ok");
         email_conf.classList.add("error");
         images[3].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </>"; // A red cross when it's not ok
+        return false;
 
     }
 
@@ -113,6 +122,7 @@ function valEmailConf() {
         email_conf.classList.remove("ok");
         email_conf.classList.add("error");
         images[3].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted email! </>"; // A red cross when it's not ok
+        return false;
 
     }
 
@@ -121,6 +131,7 @@ function valEmailConf() {
         email_conf.classList.remove("error");
         email_conf.classList.add("ok");
         images[3].innerHTML = "<img src='/images/tick.png' alt='Ok'>";
+        return true;
 
     }
 
@@ -129,6 +140,7 @@ function valEmailConf() {
         email_conf.classList.remove("ok");
         email_conf.classList.add("error");
         images[3].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not the same e-mail as above! </>";
+        return false;
 
     }
 
@@ -139,13 +151,14 @@ function valEmailConf() {
 
 function valTel() {
 
-    let regextel = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/g;
+    let regextel = /^\d{10}$/;
 
     if (tel.value.trim().length == 0) {
 
         tel.classList.remove("ok");
         tel.classList.add("error");
         images[4].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </>"; // A red cross when it's not ok
+        return false;
 
     }
 
@@ -154,6 +167,7 @@ function valTel() {
         tel.classList.remove("ok");
         tel.classList.add("error");
         images[4].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted phone number! </>"; // A red cross when it's not ok
+        return false;
 
     }
 
@@ -163,6 +177,7 @@ function valTel() {
         tel.classList.remove("error");
         tel.classList.add("ok");
         images[4].innerHTML = "<img src='/images/tick.png' alt='Ok'>"; // A green tick when it is ok
+        return true;
 
     }
 
@@ -172,11 +187,23 @@ function valTel() {
 
 function valAddress() {
 
+    let regexaddress = /^(?=.*\d)[a-zA-Z,\s\d\/]+$/;
+
     if (address.value.trim().length == 0) {
 
         address.classList.remove("ok");
         address.classList.add("error");
         images[5].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </>"; // A red cross when it's not ok
+        return false;
+
+    }
+
+    else if (!regexaddress.test(address.value)) {
+
+        address.classList.remove("ok");
+        address.classList.add("error");
+        images[5].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not a valid address! </>"; // A red cross when it's not ok
+        return false;
 
     }
 
@@ -186,6 +213,7 @@ function valAddress() {
         address.classList.remove("error");
         address.classList.add("ok");
         images[5].innerHTML = "<img src='/images/tick.png' alt='Ok'>"; // A green tick when it is ok
+        return true;
 
     }
 
@@ -199,6 +227,17 @@ email.addEventListener("blur", valEmail);
 email_conf.addEventListener("blur", valEmailConf); 
 tel.addEventListener("blur", valTel); // Need to check regex !!!
 address.addEventListener("blur", valAddress); // Needs regex !!!
+
+submitButton.addEventListener("click", function(e){
+
+    if (valName() == false || valSurname() == false || valEmail() == false || valEmailConf() == false || valTel() == false || valAddress() == false) {
+
+        e.preventDefault(); // If any of the above is true then stop the submit action
+
+    }
+    
+
+});
 
 
 
