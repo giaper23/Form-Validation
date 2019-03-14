@@ -4,16 +4,42 @@
     box-sizing: border-box;
 }
 
+form {
+
+    font-family: 'Roboto', sans-serif;
+
+}
+
 p {
 
     text-align: center;
     display: inline-block;
+    height: 20px;
+
+}
+
+input {
+
+    border-radius: 5px;
 
 }
 
 .images {
 
     display: inline-block;
+
+}
+
+.images img {
+
+    object-fit: contain;
+
+}
+
+.errorTxt {
+
+    color: gray;
+    font-family: 'Ubuntu', sans-serif;
 
 }
 

@@ -16,7 +16,7 @@ function valName() {
 
         name.classList.remove("ok");
         name.classList.add("error");
-        images[0].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> Field is empty! </p>"; // A red cross when it's not ok
+        images[0].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </p>"; // A red cross when it's not ok
 
     }
 
@@ -24,7 +24,7 @@ function valName() {
 
         name.classList.remove("ok");
         name.classList.add("error");
-        images[0].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> This is not an accepted name! </p>"; // A red cross when it's not ok
+        images[0].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted name! </p>"; // A red cross when it's not ok
 
     }
 
@@ -44,7 +44,7 @@ function valSurname() {
 
         surname.classList.remove("ok");
         surname.classList.add("error");
-        images[1].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> Field is empty! </p>"; // A red cross when it's not ok
+        images[1].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </p>"; // A red cross when it's not ok
 
     }
 
@@ -52,7 +52,7 @@ function valSurname() {
 
         surname.classList.remove("ok");
         surname.classList.add("error");
-        images[1].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> This is not an accepted surname! </p>"; // A red cross when it's not ok
+        images[1].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted surname! </p>"; // A red cross when it's not ok
 
     }
 
@@ -73,10 +73,9 @@ function valEmail() {
 
     if (email.value.trim().length == 0) {
 
-        //alert("Field is empty!");
         email.classList.remove("ok");
         email.classList.add("error");
-        images[2].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> Field is empty! </p>"; // A red cross when it's not ok
+        images[2].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </p>"; // A red cross when it's not ok
 
     }
 
@@ -84,7 +83,7 @@ function valEmail() {
 
         email.classList.remove("ok");
         email.classList.add("error");
-        images[2].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> This is not an accepted e-mail! </p>"; // A red cross when it's not ok
+        images[2].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted e-mail! </p>"; // A red cross when it's not ok
 
     }
 
@@ -103,10 +102,9 @@ function valEmailConf() {
 
     if (email_conf.value.trim().length == 0) {
 
-        //alert("Field is empty!");
         email_conf.classList.remove("ok");
         email_conf.classList.add("error");
-        images[3].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> Field is empty! </p>"; // A red cross when it's not ok
+        images[3].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </>"; // A red cross when it's not ok
 
     }
 
@@ -114,16 +112,24 @@ function valEmailConf() {
 
         email_conf.classList.remove("ok");
         email_conf.classList.add("error");
-        images[3].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> This is not an accepted email! </p>"; // A red cross when it's not ok
+        images[3].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted email! </>"; // A red cross when it's not ok
+
+    }
+
+    else if (email_conf.value.trim() === email.value.trim()) {
+
+        email_conf.classList.remove("error");
+        email_conf.classList.add("ok");
+        images[3].innerHTML = "<img src='/images/tick.png' alt='Ok'>";
 
     }
 
     else {
 
+        email_conf.classList.remove("ok");
+        email_conf.classList.add("error");
+        images[3].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not the same e-mail as above! </>";
 
-        email_conf.classList.remove("error");
-        email_conf.classList.add("ok");
-        images[3].innerHTML = "<img src='/images/tick.png' alt='Ok'>"; 
     }
 
 
@@ -139,16 +145,15 @@ function valTel() {
 
         tel.classList.remove("ok");
         tel.classList.add("error");
-        images[4].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> Field is empty! </p>"; // A red cross when it's not ok
+        images[4].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </>"; // A red cross when it's not ok
 
     }
 
     else if (!regextel.test(tel.value)) {
 
-        //alert("This is not an accepted phone number!"); // Alert if name is not acceptable
         tel.classList.remove("ok");
         tel.classList.add("error");
-        images[4].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> This is not an accepted phone number! </p>"; // A red cross when it's not ok
+        images[4].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> This is not an accepted phone number! </>"; // A red cross when it's not ok
 
     }
 
@@ -169,10 +174,9 @@ function valAddress() {
 
     if (address.value.trim().length == 0) {
 
-        //alert("Field address is empty!");
         address.classList.remove("ok");
         address.classList.add("error");
-        images[5].innerHTML = "<img src='/images/cross.png' alt='Error'> <p> Field is empty! </p>"; // A red cross when it's not ok
+        images[5].innerHTML = "<img src='/images/cross.png' alt='Error'> <p class='errorTxt'> Field is empty! </>"; // A red cross when it's not ok
 
     }
 
