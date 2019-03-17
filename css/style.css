@@ -4,53 +4,16 @@
     box-sizing: border-box;
 }
 
+body {
+
+    background-image: url("../images/kampos.jpg");
+    background-size: cover;
+
+}
+
 form {
 
-    font-family: 'Roboto', sans-serif;
-
-}
-
-p {
-
-    text-align: center;
-    display: inline-block;
-    height: 20px;
-
-}
-
-input {
-
-    border-radius: 5px;
-
-}
-
-.images {
-
-    display: inline-block;
-
-}
-
-.images img {
-
-    object-fit: contain;
-
-}
-
-.errorTxt {
-
-    color: gray;
-    font-family: 'Ubuntu', sans-serif;
-
-}
-
-.error {
-
-    border-color: red;
-
-}
-
-.ok {
-
-    border-color: lightskyblue;
+    width: 400px;
+    margin: auto;
 
 }

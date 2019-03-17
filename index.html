@@ -6,21 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Form Validation</title>
 </head>
 <body>
-    <section>
+    <div class="container">
         <form>
-            <p> Name:<input type="text" name="name" id="name"> <div class="images"> </div> </p> <br>
-            <p> Surname:<input type="text" name="surname" id="surname"> <div class="images"> </div> </p> <br>
-            <p> E-mail:<input type="email" name="email" id="email"> <div class="images"> </div> </p> <br>
-            <p> Confirm e-mail:<input type="email" name="email_conf" id="email_conf"> <div class="images"> </div> </p> <br>
-            <p> Phone:<input type="tel" name="tel" id="tel"> <div class="images"> </div> </p> <br>
-            <p> Address:<input type="text" name="address" id="address"> <div class="images"> </div> </p> <br>
-            <p><input type="submit" value="Submit" id="submitButton"></p>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="name"> Name </label> 
+                        <input type="text" name="name" id="name" class="form-control" placeholder="John">
+                        <span id="name_error" class="invalid-feedback"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="surname"> Surname </label> 
+                        <input type="text" name="surname" id="surname" class="form-control" placeholder="Doe">
+                        <span id="surname_error" class="invalid-feedback"></span>
+                    </div>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label for="email"> Email </label> 
+                <input type="email" name="email" id="email" class="form-control" placeholder="johndoe@dood.com">
+                <span id="email_error" class="invalid-feedback"></span> 
+            </div>
+                <div class="form-group">
+                <label for="email_conf"> Email confirmation </label> <input type="email" name="email_conf" id="email_conf" class="form-control" placeholder="johndoe@dood.com">
+                <span id="emailconf_error" class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <label for="tel"> Phone </label> 
+                <input type="tel" name="tel" id="tel" class="form-control" placeholder="2100000000">
+                <span id="tel_error" class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <label for="address"> Address </label> 
+                <input type="text" name="address" id="address" class="form-control" placeholder="Jump Street 3, New York">
+                <span id="address_error" class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" id="submitButton" class="btn btn-primary">
+            </div>
         </form>
-    </section>
+    </div>
+    <footer>
+    </footer>
 </body>
 </html>
