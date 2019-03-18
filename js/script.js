@@ -17,25 +17,25 @@ function valName() {
 
     if (name.value.trim().length == 0) {
 
-        name.classList.remove("is-valid");
-        name.classList.add("is-invalid");
-        document.querySelector("#name_error").innerHTML = "Empty field!";
-        return false;
+        name.classList.remove("is-valid"); //Remove this class
+        name.classList.add("is-invalid"); //Add this class
+        document.querySelector("#name_error").innerHTML = "Empty field!"; //Inform the user that the field is empty
+        return false; 
     }
 
     else if (!regexname.test(name.value)) {
 
         name.classList.remove("is-valid");
         name.classList.add("is-invalid");
-        document.querySelector("#name_error").innerHTML = "Invalid name!";
+        document.querySelector("#name_error").innerHTML = "Invalid name!"; //Inform the user that the name is invalid
         return false;
     }
 
     else {
         
-        name.classList.remove("is-invalid");
-        name.classList.add("is-valid");
-        document.querySelector("#name_error").innerHTML = "";
+        name.classList.remove("is-invalid"); //Remove class for errors
+        name.classList.add("is-valid"); //Add class for ok fields
+        document.querySelector("#name_error").innerHTML = ""; //Erase previous text
         return true;
     }
 
@@ -128,7 +128,7 @@ function valEmailConf() {
         email_conf.classList.remove("is-invalid");
         email_conf.classList.add("is-valid");
         document.querySelector("#emailconf_error").innerHTML = "";
-        return true;
+        return true; //Returns true only if emails are identical
 
     }
 
