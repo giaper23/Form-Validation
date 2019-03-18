@@ -8,12 +8,22 @@ body {
 
     background-image: url("../images/kampos.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.container {
+
+    padding-top: 3%;
 
 }
 
 form {
 
-    width: 400px;
+    width: 300px;
     margin: auto;
+    color: gray;
 
 }
+
