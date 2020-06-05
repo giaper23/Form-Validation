@@ -222,8 +222,8 @@ name.addEventListener("blur", valName); // On blur run this function
 surname.addEventListener("blur", valSurname); // Same as above
 email.addEventListener("blur", valEmail); 
 email_conf.addEventListener("blur", valEmailConf); 
-tel.addEventListener("blur", valTel); // Need to check regex !!!
-address.addEventListener("blur", valAddress); // Need to check regex !!!
+tel.addEventListener("blur", valTel);
+address.addEventListener("blur", valAddress); 
 
 submitButton.addEventListener("click", function(e){
 
