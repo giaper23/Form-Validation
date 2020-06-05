@@ -1,3 +1,3 @@
 # Form Validation
 
-Form Validation on the Front-End with <b>JavaScript</b>!
+Front-End Form Validation with <b>JavaScript</b>!
